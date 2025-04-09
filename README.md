@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Messenger App
+
+A modern, real-time messaging application built with Next.js and TypeScript. The app features a clean, intuitive interface for chatting with friends.
+
+## Features
+
+- 💬 Real-time messaging interface
+- 👥 Friend management system
+- 🎨 Modern UI with Tailwind CSS
+- 📱 Responsive design
+- 🔄 Auto-scrolling messages
+- ➕ Add new contacts through a modal interface
+- 🕒 Last seen timestamps for contacts
+
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [date-fns](https://date-fns.org/) - Date formatting
+
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── ChatWindow.tsx    # Main chat interface
+│   ├── FriendsList.tsx   # Friends sidebar
+│   ├── MessageBubble.tsx # Individual message component
+│   ├── MessageInput.tsx  # Message input field
+│   └── Modal.tsx         # Add friend modal
+├── context/
+│   └── FriendsContext.tsx # Friends state management
+├── page.tsx              # Main application page
+└── layout.tsx            # Root layout with providers
+```
+
+## Component Architecture
+
+- **ChatWindow**: Manages the display of messages and input field
+- **FriendsList**: Handles friend selection and display
+- **MessageBubble**: Renders individual messages with GIFs
+- **MessageInput**: Handles message input and sending
+- **Modal**: Manages adding new friends
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Development
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application uses a component-based architecture for maintainability and reusability. State management is handled through React Context API for global friend state, with local component state for UI elements. The Context API ensures friends are always ordered by most recent activity.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features Implementation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Auto-scrolling**: Implemented using `useRef` and `useEffect` to scroll to newest messages
+- **Friend Management**: Context-based friend list with automatic ordering by recent activity
+- **Message History**: Messages stored in a Record/Map structure by friend name
+- **Responsive Design**: Tailwind CSS classes for mobile-friendly layout
 
-## Learn More
+## Future Enhancements
 
-To learn more about Next.js, take a look at the following resources:
+- Backend integration for persistent data storage
+- Real-time messaging using WebSocket
+- User authentication
+- Message search functionality
+- File sharing capabilities
+- Read receipts
+- Online/offline status
+- Message reactions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
