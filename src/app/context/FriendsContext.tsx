@@ -30,7 +30,7 @@ export function FriendsProvider({ children }: { children: React.ReactNode }) {
     setFriends(prev => {
       const newFriend = {
         name,
-        lastSeen: format(new Date(), 'h:mm a')
+        lastSeen: format(new Date(), "h:mm a"),
       };
       return [newFriend, ...prev.filter(f => f.name !== name)];
     });

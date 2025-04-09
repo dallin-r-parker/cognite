@@ -39,6 +39,7 @@ export default function Home() {
 
   const handleAddFriend = (name: string) => {
     addFriend(name);
+    setSelectedFriend(name);
     setIsOpen(false);
   };
 
