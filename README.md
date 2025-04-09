@@ -76,7 +76,6 @@ The application uses a component-based architecture for maintainability and reus
 - User authentication
 - Message search functionality
 - File sharing capabilities
-- Read receipts
 - Online/offline status
 - Message reactions
 
