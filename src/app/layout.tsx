@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { FriendsProvider } from "./context/FriendsContext";
 import type { Metadata } from "next";
 
 const geistSans = Geist({
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex h-screen p-4 bg-slate-950">
+          <FriendsProvider>{children}</FriendsProvider>
+        </div>
       </body>
     </html>
   );
